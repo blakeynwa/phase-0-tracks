@@ -1,4 +1,4 @@
-# Git Definitions
+# Git Definitions.
 
 **Instructions: ** Define each of the following Git concepts.
 
@@ -17,3 +17,8 @@ A commit is a save point within your code. A good commit message explains what h
 * What is a merge conflict?
 
 A merge conflict is a conflict that arises in git when attempting to merge different branches together. If there are competing changes in the branches that you are trying to merge, then you will see a merge conflict. 
+
+
+Here's a really small change so I can tag Emmanuel
+
+
