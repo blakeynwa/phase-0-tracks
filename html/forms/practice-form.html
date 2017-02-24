@@ -1,21 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>Practice Form</title>
 </head>
 <body>
   <form action="success.html" method="post">
-    <div>
-      <label>Bay Area Sports Team</label>
-      <select name="Bay Area Sports Team">
-        <option value="SF Giants">SF Giants</option>
-        <option value="SF 49ers">SF 49ers</option>
-        <option value="Golden State Warriors">Golden State Warriors</option>
-      </select>
-    </div>
-    <div>
-      <textarea name="textarea" rows="10" cols="50"></textarea>
-    </div>
+  <fieldset>
     <div>
       <label>Full Name:</label>
       <input type="text" name="text">
@@ -28,6 +18,21 @@
       <label>Birthday</label>
       <input type="date" name="date">
     </div>
+    </fieldset>
+    <fieldset>
+    <div>
+      <label>Bay Area Sports Team</label>
+      <select name="Bay Area Sports Team">
+        <option value="SF Giants">SF Giants</option>
+        <option value="SF 49ers">SF 49ers</option>
+        <option value="Golden State Warriors">Golden State Warriors</option>
+      </select>
+    </div>
+    <div>
+      <textarea name="textarea" rows="10" cols="50"></textarea>
+    </div>
+    </fieldset>
+    <button type="submit">Click Here</button>
   </form>
 </body>
 </html>
