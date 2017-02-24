@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>Practice Form</title>
 </head>
 <body>
   <form action="success.html" method="post">
+  <fieldset>
+    <div>
+      <label>Full Name:</label>
+      <input type="text" name="text">
+    </div>
+    <div>
+      <label>Email</label>
+      <input type="email" name="email">
+    </div>
+    <div>
+      <label>Birthday</label>
+      <input type="date" name="date">
+    </div>
+    </fieldset>
+    <fieldset>
     <div>
       <label>Bay Area Sports Team</label>
       <select name="Bay Area Sports Team">
@@ -16,6 +31,8 @@
     <div>
       <textarea name="textarea" rows="10" cols="50"></textarea>
     </div>
+    </fieldset>
+    <button type="submit">Click Here</button>
   </form>
 </body>
 </html>
