@@ -13,3 +13,11 @@
 .accomp{
   font-size: .8em;
 }
+
+a:visited{
+  color: red;
+}
+
+#contact-info p{
+  color: red;
+}
