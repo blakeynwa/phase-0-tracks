@@ -7,10 +7,10 @@
 }
 
 #hat{
-position: absolute;
-z-index: 1;
-margin-top: -350px;
-margin-left: -20px;
+  position: absolute;
+  z-index: 1;
+  margin-top: -350px;
+  margin-left: -20px;
 }
 
 #glasses{
