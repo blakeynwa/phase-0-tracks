@@ -16,4 +16,5 @@ margin-left: -20px;
 #glasses{
   position: absolute;
   z-index: 0;
+  margin-top: -193px;
 }
