@@ -51,7 +51,19 @@ figcaption {
 
 
 @media screen and (max-width: 480px) {
-  .h1 {
-    width: 100%
+  h1 {
+    min-width: 150%;
+  }
+
+  p {
+    min-width: 150%;
+  }
+
+  blockquote {
+    min-width: 130%;
+  }
+
+  figure {
+    min-width: 150%
   }
 }
