@@ -67,3 +67,11 @@ figcaption {
     min-width: 150%
   }
 }
+
+@media screen and (max-width: 768px) {
+  #external-links {
+    display: block;
+  }
+}
+  
+  
