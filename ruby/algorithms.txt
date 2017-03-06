@@ -1,8 +1,45 @@
 Release 0: Equip Your New Robot
-
-
-
-
+- Using an Elevator
+  -Proceed to the elevator door panel
+  	-Press the “up” button if desired floor is higher than current floor
+  	-Press the “down” button if desired floor is lower than current floor
+  -When you hear a “ding” noise and the elevator doors open, proceed inside the elevator
+  -If there is no room in the elevator
+	-Wait outside the elevator doors until an elevator with room available arrives
+  -If there are other people in the elevator
+	-Move as close as possible to the wall farthest from the people in the elevator 	and provide ample space
+	-Provide courtesy greetings and apologies for taking up valuable space
+  -If there are no other people in the elevator
+	-Position yourself to leave enough room should other people arrive from other 		floors
+  -Once inside the elevator 
+	-Turn around and face the open elevator doors
+	-View the panel with numbers on the right side of the open doors 
+	-Press the number for the desired floor
+		-i.e., bottom floor would be selected by pressing “1,” 10th floor by 			selecting “10”
+	-If the button was selected properly, it will illuminate with an orange hue
+  -Until current floor is desired floor
+  	-Stay put inside the elevator
+	-If people enter the elevator, ask what floor they would like to visit and press 	the corresponding button
+  -Exit the elevator once the desired floor number is announced over the speaker
+  -If the elevator has not moved or provided an announcement for more than 10 seconds
+	-Press the desired floor button once
+	-Verify the elevator doors are closed by pressing the close doors button
+	-Verify there are no items blocking the door
+	-Verify there are no humans in need of assistance in the elevator
+	-If none of the above are causing the issue, press the help button in the 		elevator, and follow the instructions from the announcer
 
 
 Release 1: Find a Real-Life Algorithm
+Algorithm to Determine if a Shower is Necessary
+-If I am scheduled to work
+  -Shower one hour before leaving for work
+-If it has been greater than 24 hours since previous shower
+  -Smell armpits
+	-if armpits smell, shower
+	-if armpits smell is pleasant, no need to shower
+  -Am I leaving the house today
+	-if the answer is yes, then shower
+  -Are people visiting me today
+	-shower
+-If none of the above conditions are met, then there is no need to shower
+
