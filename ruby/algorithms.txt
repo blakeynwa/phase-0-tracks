@@ -1,8 +1,11 @@
 Release 0: Equip Your New Robot
-
-
-
-
-
+- If going home
+  -Home is on floor 40
+  -Until current floor is floor 40
+	-Look at the elevator control panel, which has a list of numbers
+	-Each number represents a different floor
+	-Press 40 once until the number is lit with an orange hue representing the press 	was accepted
+  	-Stay put inside the elevator until the announcement “floor 40” plays over the 		speakers
+  -Step forward out of the elevator into the hallway and proceed home
 
 Release 1: Find a Real-Life Algorithm
