@@ -29,6 +29,17 @@ Release 0: Equip Your New Robot
 	-If none of the above are causing the issue, press the help button in the 		elevator, and follow the instructions from the announcer
 
 
-  
-
 Release 1: Find a Real-Life Algorithm
+Algorithm to Determine if a Shower is Necessary
+-If I am scheduled to work
+  -Shower one hour before leaving for work
+-If it has been greater than 24 hours since previous shower
+  -Smell armpits
+	-if armpits smell, shower
+	-if armpits smell is pleasant, no need to shower
+  -Am I leaving the house today
+	-if the answer is yes, then shower
+  -Are people visiting me today
+	-shower
+-If none of the above conditions are met, then there is no need to shower
+
