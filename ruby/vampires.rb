@@ -15,10 +15,17 @@ puts "Would you like to enroll in the company's health insurance?"
   insurance = gets.chomp
 
 if 
+  name == "Drake Cula" || name == "Tu Fang"
+  puts "Definitely a vampire"
+elsif
+  (ageyear.to_i != currentyear - age.to_i) && (garlic == "yes" || insurance == "yes")
+  puts "Probably a vampire"
+elsif 
+  (ageyear.to_i != currentyear - age.to_i) && (garlic == "no" || insurance == "no")
+  puts "Almost certainly a vampire"
+elsif 
   (ageyear.to_i == currentyear - age.to_i) && (garlic == "yes" || insurance == "yes")
   puts "Probably not a vampire"
-else
-  puts "Probably a vampire"
 end
 
 
