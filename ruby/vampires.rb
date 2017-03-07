@@ -15,11 +15,13 @@ puts "Would you like to enroll in the company's health insurance?"
   insurance = gets.chomp
 
 if 
-  ageyear.to_i == currentyear - age.to_i
+  (ageyear.to_i == currentyear - age.to_i) && (garlic == "yes" || insurance == "yes")
   puts "Probably not a vampire"
 else
-    puts "Probably a vampire"
+  puts "Probably a vampire"
 end
+
+
 
 
 
