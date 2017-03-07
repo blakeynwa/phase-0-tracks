@@ -3,6 +3,7 @@ wolves_like_garlic = true
 vampires_like_sunshine = false
 vampires_like_garlic = true
 currentyear = 2017
+valid_input = "yes" || "no"
 
 puts "What is your name?"
   name = gets.chomp
@@ -21,11 +22,13 @@ elsif
   (ageyear.to_i != currentyear - age.to_i) && (garlic == "yes" || insurance == "yes")
   puts "Probably a vampire"
 elsif 
-  (ageyear.to_i != currentyear - age.to_i) && (garlic == "no" || insurance == "no")
+  (ageyear.to_i != currentyear - age.to_i) && (garlic == "no" && insurance == "no")
   puts "Almost certainly a vampire"
 elsif 
   (ageyear.to_i == currentyear - age.to_i) && (garlic == "yes" || insurance == "yes")
   puts "Probably not a vampire"
+else
+  puts "Results Inconclusive"
 end
 
 
