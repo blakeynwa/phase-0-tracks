@@ -6,8 +6,9 @@ currentyear = 2017
 
 puts "What is your name?"
   name = gets.chomp
-puts "How old are you? What year were you born?"
+puts "How old are you?"
   age = gets.chomp
+puts "What year were you born?"
   ageyear = gets.chomp
 puts "Our company cafeteria serves garlic bread. Should we order some for you? (yes or no)"
   garlic = gets.chomp
