@@ -19,15 +19,27 @@ until employeesnumber == 0
     garlic = gets.chomp
   puts "Would you like to enroll in the company's health insurance? (yes or no)"
     insurance = gets.chomp
+  puts "Please name anything you are allergic to one by one"
+    validinput = false
+    allergy = "" 
+    until validinput 
+      allergy = gets.chomp 
+      validinput = false
+      if allergy == "sunshine"
+        validinput = true 
+      elsif allergy == "done"
+        validinput = true 
+      end
+    end
   if 
     name == "Drake Cula" || name == "Tu Fang"
     puts "Definitely a vampire"
-  elsif
-    (ageyear != currentyear - age) && (garlic == "yes" || insurance == "yes")
-    puts "Probably a vampire"
   elsif 
-    (ageyear != currentyear - age) && (garlic == "no" && insurance == "no")
-    puts "Almost certainly a vampire"
+    (ageyear != currentyear - age) && (garlic == "no" && insurance == "no") && allergy == "sunshine"
+    puts "Almost certainly a vampire"  
+  elsif
+    (ageyear != currentyear - age) && (garlic == "yes" || insurance == "yes") || allergy == "sunshine"
+    puts "Probably a vampire"
   elsif 
     (ageyear == currentyear - age) && (garlic == "yes" || insurance == "yes")
     puts "Probably not a vampire"
