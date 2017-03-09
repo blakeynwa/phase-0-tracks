@@ -1,4 +1,6 @@
 # figure out the index of the letter and increase the index by 1 each loop
+
+
 def encrypt(string)
   new_word = ""
   index = 0
@@ -35,6 +37,21 @@ new_word = encrypted_word.split("")
   end
   word 
 end
+
+puts "Hey there, would you like to encrypt or decrypt?"
+  user_response = gets.chomp
+
+#if statement to control proper method based on encryption or decryption
+  if user_response == "encrypt"
+    puts "What would you like to encrypt?"
+    encrypted_word = gets.chomp
+    encrypt("#{encrypted_word}")
+  elsif user_response == "decrypt"
+    puts "What would you like to decrypt?"
+    decrypted_word == gets.chomp
+    decrypt("#{decrypted_word}")
+  end
+    
 
 # Successfully can call nested method because both data types used are strings
 
