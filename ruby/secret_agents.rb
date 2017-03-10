@@ -48,7 +48,7 @@ puts "Hey there, would you like to encrypt or decrypt?"
     encrypt("#{encrypted_word}")
   elsif user_response == "decrypt"
     puts "What would you like to decrypt?"
-    decrypted_word == gets.chomp
+    decrypted_word = gets.chomp
     decrypt("#{decrypted_word}")
   end
     
