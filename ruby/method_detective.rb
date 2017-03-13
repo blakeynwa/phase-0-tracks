@@ -16,8 +16,11 @@ p "zom".insert(2, "o")
 # => "    enhance    "
 p "enhance".center(15)
 
-# "Stop! You’re under arrest!".<???>
+"Stop! You’re under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
+p "Stop! You’re under arrest!".upcase
+#upcase! will do similar, but will return nil if no changes were made to
+#the string (i.e., if you already inserted a fully capitalized string)
 
 # "the usual".<???>
 #=> "the usual suspects"
