@@ -30,11 +30,16 @@ p "the usual".insert(9, " suspects")
 # => "the usual suspects"
 p " suspects".insert(0, "the usual")
 
-# "The case of the disappearing last letter".<???>
+"The case of the disappearing last letter".chop
 # => "The case of the disappearing last lette"
+p "The case of the disappearing last letter".chop
+#another way this can be done is with .chomp:
+"The case of the disappearing last letter".chomp("r")
+p "The case of the disappearing last letter".chomp("r")
 
-# "The mystery of the missing first letter".<???>
+"The mystery of the missing first letter".slice(1, 38)
 # => "he mystery of the missing first letter"
+p "The mystery of the missing first letter".slice(1, 38)
 
 # "Elementary,    my   dear        Watson!".<???>
 # => "Elementary, my dear Watson!"
