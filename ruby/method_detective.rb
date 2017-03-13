@@ -8,8 +8,9 @@
 # => “InVeStIgAtIoN”
 p "iNvEsTiGaTiOn".swapcase
 
-# "zom".<???>
+"zom".insert(2, "o")
 # => “zoom”
+p "zom".insert(2, "o")
 
 # "enhance".<???>
 # => "    enhance    "
