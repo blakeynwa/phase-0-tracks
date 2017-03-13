@@ -41,8 +41,9 @@ p "The case of the disappearing last letter".chomp("r")
 # => "he mystery of the missing first letter"
 p "The mystery of the missing first letter".slice(1, 38)
 
-# "Elementary,    my   dear        Watson!".<???>
+"Elementary,    my   dear        Watson!".squeeze
 # => "Elementary, my dear Watson!"
+p "Elementary,    my   dear        Watson!".squeeze
 
 # "z".<???>
 # => 122 
