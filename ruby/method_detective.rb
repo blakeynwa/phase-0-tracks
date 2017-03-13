@@ -22,11 +22,13 @@ p "Stop! You’re under arrest!".upcase
 #upcase! will do similar, but will return nil if no changes were made to
 #the string (i.e., if you already inserted a fully capitalized string)
 
-# "the usual".<???>
+"the usual".insert(9, " suspects")
 #=> "the usual suspects"
+p "the usual".insert(9, " suspects")
 
-# " suspects".<???>
+" suspects".insert(0, "the usual")
 # => "the usual suspects"
+p " suspects".insert(0, "the usual")
 
 # "The case of the disappearing last letter".<???>
 # => "The case of the disappearing last lette"
