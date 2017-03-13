@@ -49,5 +49,6 @@ p "Elementary,    my   dear        Watson!".squeeze
 # => 122 
 p "z".ord
 
-# "How many times does the letter 'a' appear in this string?".<???>
+"How many times does the letter 'a' appear in this string?".count "a"
 # => 4
+p "How many times does the letter 'a' appear in this string?".count "a"
