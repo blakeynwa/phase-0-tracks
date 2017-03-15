@@ -22,20 +22,11 @@ puts "Which information needs updating? (Type label name or none)"
   user_input = gets.chomp
   if user_input == "none"
     puts "Thank you!"
-  elsif user_input.intern == :decor_theme
+  elsif user_input.intern == :decor_theme || :name || :age || :num_of_child
     puts "please enter the new value"
-    form[:decor_theme] = gets.chomp
-  elsif user_input.intern == :name
-    puts "please enter the new value"
-    form[:name] = gets.chomp
-  elsif user_input.intern == :age
-    puts "please enter the new value"
-    form[:age] = gets.chomp
-  elsif user_input.intern == :num_of_child
-    puts "please enter the new value"
-    form[:num_of_child] = gets.chomp
+    form[user_input.intern] = gets.chomp
   end
   
   puts form 
-  p user_input.intern
+  
 
