@@ -1,50 +1,10 @@
-=begin
+
 def dinosaurs
   puts "Dinosaurs are extinct!"
   yield("T-rex", "Pterodactyl")
 end
 
 dinosaurs { |dino1, dino2| puts "But #{dino1} and #{dino2} are really cool!"}
-
-
-letters = ["a", "b", "c", "d", "e"]
-new_letters = []
-
-
-puts "original data:"
-p letters
-p new_letters
-
-letters.each do |letter|
-  new_letters << letter.next
-end
-
-puts "After .each call:"
-p letters
-p new_letters
-
-numbers = {1 => 'one', 2 => 'two', 3 => 'three'}
-
-numbers.each do |digit, word|
-  puts "#{digit} is spelled out as #{word}"
-end
-
-
-letters = ["a", "b", "c", "d", "e"]
-
-puts "original data:"
-p letters
-
-modified_letters = letters.map do |letter|
-  puts letter
-  letter.next
-end
-p modified_letters
-
-
-puts "After .map call:"
-p letters
-
 
 actors = ["Tom", "Brad", "Kevin"]
 movies = {"Tom" => "Mission Impossible", 
@@ -71,10 +31,21 @@ end
 actors.map! do |actors|
   puts actors.reverse
 end
-=end
+
 
 
 #Release 2:
+
+#method 1 (A method that iterates through the items, 
+#deleting any that meet a certain condition)
+
+numbers = [1,3,5,7,9,10,14]
+
+def lessthan(numbers)
+numbers.delete_if { |numbers| numbers < 8 }
+end
+
+puts lessthan(numbers)
 
 #method 2 (method that filters a data structure for only
 #items that satisfy certain conditions)
@@ -93,6 +64,16 @@ def selector(hash)
 end
 
 puts selector(hash)
+
+#method 3 (A different method that filters a data structure for 
+#only items satisfying a certain condition)
+
+grades = { "mike" => 95, "Sam" => 89, "joe" => 77, "tom" => 85}
+def grade_selector(grades)
+grades.select { |name, grades| grades < 86 }
+end
+
+p grade_selector(grades)
 
 #method 4 (method that will remove items from a data structure
 #until the condition in the block evaluates to false, then stops)
