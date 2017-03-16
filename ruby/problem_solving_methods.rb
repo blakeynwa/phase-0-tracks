@@ -1,4 +1,3 @@
-=begin
 def search_array(arr, int)
   idx = 0
   while idx < arr.length
@@ -17,7 +16,6 @@ p search_array(arr, 1)
 
 p search_array(arr, 24)
 
-=end
 
 #The number given as an argument represents number of integers in array
 #When calling fib method, return should be length of given argument in an
@@ -32,7 +30,8 @@ def fib(int)
   return initial
 end
 
-p fib(6)
+p fib(20)
+p fib(100).last == 218922995834555169026
 
 
 
