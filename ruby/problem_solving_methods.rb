@@ -1,4 +1,3 @@
-=begin
 def search_array(arr, int)
   idx = 0
   while idx < arr.length
@@ -34,10 +33,16 @@ end
 p fib(20)
 p fib(100).last == 218922995834555169026
 
-=end 
 
 
-#Testing bubble sort method
+
+#Bubble sort should take an array of integers and sort in descending order
+#1. Take the first value of the array
+#2. Evaluate to next value of the array
+#3. Swap order in the array if necessary
+#4. Repeat until all swaps have been made
+
+
 def bubble_sort(array)
   n = array.length
   loop do
