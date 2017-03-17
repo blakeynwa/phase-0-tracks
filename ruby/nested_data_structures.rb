@@ -8,7 +8,6 @@ classroom_supplies = {
       supplies_needed: [
           "Pencils",
           "Textbooks"]
-
     },
     room2: {
         name: "Sophomore",
