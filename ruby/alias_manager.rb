@@ -1,36 +1,9 @@
-test_hash = {
-  vowels: ["a", "e", "i", "o", "u"],
-  consonants: ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", 
-                "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
-}
+#To start, request user input for first and last name, then swap the names
+#There are a number of ways to do this, I decided to use an array
+#rotate method, that takes the index number given as count and 
+#returns that index as the first in the array.
 
-
-=begin
-if string == test_hash[:vowel]
-  puts test_hash[:vowel][1 + 1]
-elsif string == test_hash[:consonants]
-  puts test_hash[:consonants][1 + 1]
+def nameswap(first_name, last_name)
+  array = [first_name, last_name]
+  new_array = array.rotate!(count = 1)
 end
-=end
-
-
-def letter_detector(string)
-  test_hash = {
-  vowels: ["a", "e", "i", "o", "u"],
-  consonants: ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", 
-                "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
-  }
-  if test_hash[:vowels].include?(string) == true 
-    puts test_hash[:vowels][+1]
-  elsif test_hash[:consonants].include?(string) == true 
-    puts test_hash[:consonants][+1]
-  end
-end
-
-
-letter_detector("i")
-letter_detector("b")
-letter_detector("r")
-
-
-
