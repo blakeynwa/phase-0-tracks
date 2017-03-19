@@ -11,13 +11,14 @@ puts "What's your first name?"
     last_name = gets.chomp 
 
 def nameswap(first_name, last_name)
-  array = [first_name, last_name]
-  newarray = array.rotate!(count = 1)
+  full_name = [first_name, last_name]
+  swapped = full_name.rotate!(count = 1)
+  swapped.join(" ")
 end
 
-swapped_name = nameswap(first_name, last_name).join(" ")
 
-p swapped_name
+
+p nameswap(first_name, last_name)
 
 
 
