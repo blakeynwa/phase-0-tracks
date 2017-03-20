@@ -1,3 +1,5 @@
+=begin
+
 class Puppy
 
   def fetch(toy)
@@ -23,6 +25,11 @@ class Puppy
     puts "*extends paw to shake*"
   end
 
+  def initialize
+    puts "Initializing new puppy instance ..."
+  end
+
+
 end
 
 Puppy.new.fetch("toy")
@@ -30,3 +37,6 @@ Puppy.new.speak(3)
 Puppy.new.rollover
 Puppy.new.dog_years(7)
 Puppy.new.shake
+
+=end
+
