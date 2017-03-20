@@ -1,4 +1,25 @@
+#Request user input for full name. Take the input and flip the string
+#so the last name comes first, first last. Define "nameswap" method to achieve
+#this. Within use ruby built in split method to split the string, then 
+#use the built in reverse and join methods.
 
+#Define two different methods to check the string for vowels and consonants,
+#then replace the vowels and consonants with the next types of letters
+#alphabetically. We would expect a consonant of "x" to return "y", and
+#a vowel of "e" to return "i" after using these methods. In order to 
+#account for capital letters, create a vowelscap array with only capital 
+#versions of the vowels (other vowel array has only lowercase). These
+#same steps apply to the consonant method. 
+
+#Iterate over each letter using a map method and return the necessary value
+#(i.e., if running the vowelchange method, if the vowel matched then 
+#the next corresponding index is returned. However, if no vowels are matched,
+# then the letter unchanged is returned).
+
+#Finally, define an encrypted_name method that rejoins the individual characters
+#as string. Create an empty hash called aliases, where the user input of 
+#their name and encrypted name are stored. Print back the before and after
+#versions once the program is told to stop running via input of "quit".
 
 def nameswap(string)
   name = string.split
@@ -55,27 +76,5 @@ loop do
   aliases[:encrypt] = encrypted_name(username)
   puts "#{aliases[:original]} is your real name, but #{aliases[:encrypt]} is your encrypted name."
 end
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
 
   
