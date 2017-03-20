@@ -1,11 +1,11 @@
-puts "What's your name?"
-  name = gets.chomp 
+
+
 def nameswap(string)
   name = string.split
   name.reverse.join(" ")
 end
 
-puts nameswap(name)
+
 
 def vowelchange(string)
 vowels = ['a', 'e', 'i', 'o', 'u']
@@ -41,7 +41,14 @@ def conschange(string)
   end
 end
 
+def encrypted_name(string)
+  conschange(string).join("")
+end
 
 
-p conschange("Felicia Torres")
-  
+loop do 
+  puts "Please enter your first and last name (or type quit to stop input)"
+  username = gets.chomp 
+    break if username == "quit"
+  puts "Your encrypted name is #{encrypted_name(username)}."
+end
