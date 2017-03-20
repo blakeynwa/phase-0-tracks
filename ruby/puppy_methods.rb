@@ -40,3 +40,33 @@ Puppy.new.shake
 
 =end
 
+aardvarks = []
+
+class Aardvark
+
+  def initialize
+    puts "This is an Aardvark"
+  end
+
+  def eatsants(int)
+    int.times do 
+      puts "*eats ants*"
+    end
+  end
+
+  def sleeps
+    puts "Aardvark is asleep"
+  end
+
+end
+
+50.times do 
+  aardvarks << Aardvark.new
+end
+
+aardvarks.each do | aardvark |
+  aardvark.eatsants(3)
+  aardvark.sleeps
+end
+
+
