@@ -1,36 +1,39 @@
-#To start, request user input for first and last name, then swap the names
-#There are a number of ways to do this, I decided to use an array
-#rotate method, that takes the index number given as count and 
-#returns that index as the first in the array.
+puts "What's your name?"
+  name = gets.chomp 
+def nameswap(string)
+  name = string.split
+  name.reverse.join(" ")
+end
 
+puts nameswap(name)
 
-
-puts "What's your first name?"
-    first_name = gets.chomp 
-  puts "What's your last name?"
-    last_name = gets.chomp 
-
-def nameswap(first_name, last_name)
-  full_name = [first_name, last_name]
-  swapped = full_name.rotate!(count = 1)
-  swapped.join(" ")
+def vowelchange(string)
+vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+originalname = nameswap(string).split("")
+vowel_name = originalname.map do |letter|
+  if vowels.include? letter
+    "a"
+  else
+    letter
+  end
+end
 end
 
 
 
-p nameswap(first_name, last_name)
+def conschange(string)
+  consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m",
+                "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+  preconscheck = vowelchange(string)
+  cons_name = preconscheck.map do |letter|
+    if consonants.include? letter
+      "y"
+    else
+      letter
+    end
+  end
+end
 
-
-
-
-
-
-
-
+p conschange("blake meyer")
   
-
-
-
-
-
-
+  
