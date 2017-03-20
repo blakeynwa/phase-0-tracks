@@ -45,10 +45,37 @@ def encrypted_name(string)
   conschange(string).join("")
 end
 
+aliases = {}
 
 loop do 
   puts "Please enter your first and last name (or type quit to stop input)"
   username = gets.chomp 
     break if username == "quit"
-  puts "Your encrypted name is #{encrypted_name(username)}."
+  aliases[:original] = username
+  aliases[:encrypt] = encrypted_name(username)
+  puts "#{aliases[:original]} is your real name, but #{aliases[:encrypt]} is your encrypted name."
 end
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
