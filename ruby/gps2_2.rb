@@ -33,14 +33,13 @@
 
 
 def list(item)
-  grocery_list = []
-  grocery_list << item
-  quantity = [1]
-  list_quantity = {
-    grocery_list, quantity 
-  } 
-end 
+  grocery_list = [item.split]
+  updated_list = grocery_list.flatten
+  p updated_list
+  list_quantity = updated_list.map {|item, quantity| {items: item, quantity: 1}}
+  p list_quantity
+end
 
-puts list("milk, juice")
-grocery_list
+list("milk apples carrots")
+
 
