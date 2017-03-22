@@ -32,6 +32,7 @@
 
 
 
+
 def list(item)
   grocery_list = [item.split]
   updated_list = grocery_list.flatten
@@ -50,4 +51,10 @@ end
 
 additem(mylist, "Apricots", "5")
 
+def deleteitem(list, itemname)
+  list.keep_if {|key, value| value != itemname }
+  puts list
+end
 
+deleteitem(mylist, "Milk")
+  
