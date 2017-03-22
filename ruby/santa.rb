@@ -16,7 +16,7 @@ class Santa
   def santaage
     age = 0
   end
-  
+
   def reindeer
     reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", 
                 "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
@@ -25,6 +25,18 @@ class Santa
 end
 
 santa = Santa.new("straight", "white")
+santas = []
+genders = ["female", "male", "Cisgender", "Intersex", "MTF", "Pangender", 
+"Trans", "Non-binary", "Gender Fluid", "Bigender"]
+ethnicities = ["N/A", "White", "Black", "Latino", "Arab", "Samoan",
+   "Dutch", "French", "Korean", "Latvian"]
+
+genders.length.times do |i|
+  santas << Santa.new(genders[i], ethnicities[i])
+end
+
+puts santas
+
 santa.speak
 santa.eat_milk_and_cookies("snickerdoodle")
 puts santa.reindeer
