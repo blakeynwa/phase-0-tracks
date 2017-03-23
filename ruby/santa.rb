@@ -1,4 +1,6 @@
 class Santa
+  attr_reader :ethnicity
+  attr_accessor :age, :gender 
 
   def initialize(gender, ethnicity)
     @gender = gender
@@ -17,14 +19,6 @@ class Santa
     puts "That was a good #{cookie}!"
   end
 
-  def age
-    puts @age
-  end
-
-  def ethnicity
-    puts @ethnicity
-  end
-
   def celebrate_birthday
     @age = @age + 1
   end
@@ -32,10 +26,6 @@ class Santa
   def get_mad_at(name)
     @reindeer_ranking.delete(name)
     @reindeer_ranking.push(name)
-  end
-
-  def gender=(new_gender)
-    @gender = new_gender
   end
 
 
