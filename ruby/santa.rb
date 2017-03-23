@@ -28,24 +28,25 @@ class Santa
     @reindeer_ranking.push(name)
   end
 
-
 end
 
-santa = Santa.new("straight", "white")
 santas = []
 genders = ["female", "male", "Cisgender", "Intersex", "MTF", "Pangender", 
 "Trans", "Non-binary", "Gender Fluid", "Bigender"]
 ethnicities = ["N/A", "White", "Black", "Latino", "Arab", "Samoan",
    "Dutch", "French", "Korean", "Latvian"]
 
-genders.length.times do |i|
-  santas << Santa.new(genders[i], ethnicities[i])
+200.times do |i|
+  random_santas = Santa.new(genders.shuffle[rand], ethnicities.shuffle[rand])
+  random_santas.age = rand(140)
+  puts "This Santa is #{random_santas.age} and their gender is #{random_santas.gender}, ethnicity is #{random_santas.ethnicity}"
 end
+
 
 #This begins a mess of driver code to test out all of the above
 =begin
 p santas
-
+santa = Santa.new("straight", "white")
 santa.speak
 santa.eat_milk_and_cookies("snickerdoodle")
 santa.celebrate_birthday
@@ -55,4 +56,7 @@ santa.ethnicity
 santa.get_mad_at("Rudolph")
 santa.gender = "Cis male"
 =end
+#This ends a mess of driver code 
+
+
 
