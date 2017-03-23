@@ -36,7 +36,7 @@ genders = ["female", "male", "Cisgender", "Intersex", "MTF", "Pangender",
 ethnicities = ["N/A", "White", "Black", "Latino", "Arab", "Samoan",
    "Dutch", "French", "Korean", "Latvian"]
 
-200.times do |i|
+1000.times do |i|
   random_santas = Santa.new(genders.shuffle[rand], ethnicities.shuffle[rand])
   random_santas.age = rand(140)
   puts "This Santa is #{random_santas.age} and their gender is #{random_santas.gender}, ethnicity is #{random_santas.ethnicity}"
