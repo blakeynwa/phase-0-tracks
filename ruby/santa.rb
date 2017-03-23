@@ -3,6 +3,7 @@ class Santa
   def initialize(gender, ethnicity)
     @gender = gender
     @ethnicity = ethnicity
+    puts "Initializing Santa instance..."
   end
 
   def speak
@@ -35,7 +36,7 @@ genders.length.times do |i|
   santas << Santa.new(genders[i], ethnicities[i])
 end
 
-puts santas
+p santas
 
 santa.speak
 santa.eat_milk_and_cookies("snickerdoodle")
