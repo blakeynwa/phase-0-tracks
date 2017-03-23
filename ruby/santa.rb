@@ -3,6 +3,9 @@ class Santa
   def initialize(gender, ethnicity)
     @gender = gender
     @ethnicity = ethnicity
+    @age = 0
+    @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", 
+                "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
     puts "Initializing Santa instance..."
   end
 
@@ -14,13 +17,21 @@ class Santa
     puts "That was a good #{cookie}!"
   end
 
-  def santaage
-    age = 0
+  def age
+    puts @age
   end
 
-  def reindeer
-    reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", 
-                "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+  def ethnicity
+    puts @ethnicity
+  end
+
+  def celebrate_birthday
+    @age = @age + 1
+  end
+
+  def get_mad_at(name)
+    @reindeer_ranking.delete(name)
+    @reindeer_ranking.push(name)
   end
 
 end
@@ -40,4 +51,9 @@ p santas
 
 santa.speak
 santa.eat_milk_and_cookies("snickerdoodle")
-puts santa.reindeer
+santa.celebrate_birthday
+santa.celebrate_birthday
+santa.age
+santa.ethnicity
+santa.get_mad_at("Rudolph")
+
