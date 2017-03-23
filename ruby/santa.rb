@@ -43,8 +43,21 @@ ethnicities = ["N/A", "White", "Black", "Latino", "Arab", "Samoan",
 end
 
 
-#This begins a mess of driver code to test out all of the above
+
 =begin
+
+Here's a similar way to accomplish the same thing. Big difference being the 
+randomization doesn't happen within the arrays, it happens when it's called 
+into the string at the end. The way above is a bit cleaner.
+
+10.times do |i|
+  random_santa = Santa.new(genders, ethnicities)
+  random_santa.age = rand(140)
+  puts "This Santa is #{random_santa.age = rand(140)} and their gender is #{random_santa.gender[rand(0..9)]}, ethnicity #{random_santa.ethnicity[rand(0..9)]}."
+end
+
+#This begins a mess of driver code to test out all of the above
+
 p santas
 santa = Santa.new("straight", "white")
 santa.speak
