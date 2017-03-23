@@ -52,6 +52,8 @@ genders.length.times do |i|
   santas << Santa.new(genders[i], ethnicities[i])
 end
 
+#This begins a mess of driver code to test out all of the above
+=begin
 p santas
 
 santa.speak
@@ -62,4 +64,5 @@ santa.age
 santa.ethnicity
 santa.get_mad_at("Rudolph")
 santa.gender = "Cis male"
+=end
 
