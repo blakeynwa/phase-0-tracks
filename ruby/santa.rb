@@ -34,6 +34,11 @@ class Santa
     @reindeer_ranking.push(name)
   end
 
+  def gender=(new_gender)
+    @gender = new_gender
+  end
+
+
 end
 
 santa = Santa.new("straight", "white")
@@ -56,4 +61,5 @@ santa.celebrate_birthday
 santa.age
 santa.ethnicity
 santa.get_mad_at("Rudolph")
+santa.gender = "Cis male"
 
