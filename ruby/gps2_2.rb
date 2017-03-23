@@ -33,28 +33,47 @@
 
 
 
-def list(item)
-  grocery_list = [item.split]
-  updated_list = grocery_list.flatten
-  list_quantity = updated_list.map {|item, quantity| {items: item, quantity: 1}}
+def user_list(item)
+  grocery_list = item.split
+  quantity_list = {}
+  grocery_list.each do |item|
+    quantity_list[item] = 1 
+  end
+  quantity_list
 end
 
-mylist = list("Milk Apples Carrots Bananas Oranges")
+grocery_items = user_list("Carrots Potatoes Milk")
 
-def additem(list, item, quantity)
-  emptyhash = {}
-  emptyhash[:items] = item
-  emptyhash[:quantity] = quantity
-  list << emptyhash
-  puts list
+def item_add(list, item, quantity)
+  list[item] = quantity
+  list
 end
 
-additem(mylist, "Apricots", "5")
-
-def deleteitem(list, itemname)
-  list.keep_if {|key, value| value != itemname }
-  puts list
+def item_delete(list, item)
+  list.delete(item)
+  list
 end
 
-deleteitem(mylist, "Milk")
+def item_updated(list, item, quantity)
+  list[item] = quantity
+  list
+end
+
+item_add(grocery_items, "Lemonade", 2)
+item_add(grocery_items, "Tomatoes", 3)
+item_add(grocery_items, "Onions", 1)
+item_add(grocery_items, "Ice Cream", 4)
+
+item_delete(grocery_items, "Lemonade")
+
+item_updated(grocery_items, "Ice Cream", 1)
+
+puts "Here's your grocery list:"
+grocery_items.each do |item, quantity|
+  puts "#{item}, #{quantity}"
+end
+
+
+
+
   
