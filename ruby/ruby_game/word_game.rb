@@ -41,7 +41,7 @@ class WordGame
     show_progress = " "
     @secret_word.chars.each do |letter|
       if user.include?(letter)
-        show_progress << letter
+        show_progress << " #{letter} "
       else
         show_progress << " _ "
       end
