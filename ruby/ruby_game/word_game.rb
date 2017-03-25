@@ -28,20 +28,19 @@ Define check_word method
 #Here's a solid basis for the word comparison:
 
 def word_compare(secret, user)
-  secret_word = secret
-  secret_array = secret_word.split("")
-  user_word = user
-  checker = user_word.split("")
-  word_checker = checker.map do |letter|
-    if secret_array.include? letter
-      secret_array[secret_array.index(letter)]
+  show_progress = " "
+  secret.chars.each do |letter|
+    if user.include?(letter)
+      show_progress << letter
     else
-      "-"
+      show_progress << " _ "
     end
   end
+  show_progress
 end
 
-word_compare("toast", "boast")
+
+word_compare("toast", "t")
 
 
 
