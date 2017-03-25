@@ -27,26 +27,35 @@ Define check_word method
 
 #Here's a solid basis for the word comparison:
 
-def word_compare(secret, user)
-  show_progress = " "
-  secret.chars.each do |letter|
-    if user.include?(letter)
-      show_progress << letter
-    else
-      show_progress << " _ "
-    end
+class WordGame
+  attr_writer :secret_word
+  attr_reader :user
+  
+  def initialize(secret)
+    @secret_word = secret
+    @guess_number = 0 
+    @game_over = false 
   end
-  show_progress
+
+  def word_compare(user)
+    show_progress = " "
+    @secret_word.chars.each do |letter|
+      if user.include?(letter)
+        show_progress << letter
+      else
+        show_progress << " _ "
+      end
+    end
+    show_progress
+  end
+  
 end
 
 
-word_compare("toast", "t")
+  
+test = WordGame.new("toast")
 
-
-
-
-
-
+test.word_compare("t")
 
 
 
