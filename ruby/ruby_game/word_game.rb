@@ -22,5 +22,33 @@ Define check_word method
   "IF guess != previous guess, guess_count += 1")
 
 #user interface (driver code)
-  
+  **NEED MORE PSEUDO HERE**
+=end
+
+#Here's a solid basis for the word comparison:
+
+def word_compare(secret, user)
+  secret_word = secret
+  secret_array = secret_word.split("")
+  user_word = user
+  checker = user_word.split("")
+  word_checker = checker.map do |letter|
+    if secret_array.include? letter
+      secret_array[secret_array.index(letter)]
+    else
+      "-"
+    end
+  end
+end
+
+word_compare("toast", "boast")
+
+
+
+
+
+
+
+
+
 
