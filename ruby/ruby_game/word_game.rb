@@ -31,6 +31,7 @@ class WordGame
   attr_reader 
   attr_accessor :guess_number, :secret_word, :guess_limit, :game_over, 
                 :print_guesses, :guesses, :user, :show_progress, :dashes
+                :guess_array
   
   def initialize(secret)
     @secret_word = secret.split("")
@@ -38,6 +39,7 @@ class WordGame
     @game_over = false 
     @guess_limit = secret.length
     @show_progress = ("*" * secret.length).split("")
+    @guesses = []
   end
 
   def word_compare(user_input)
@@ -47,18 +49,23 @@ class WordGame
           @show_progress[i] = letter
         end
       end
+      @guesses << user_input
   end
 end
 #user-interface
 
 puts "Welcome to the word game!"
 test = WordGame.new("toast")
+puts "Current word status:"
+puts "*" * test.secret_word.length
 
 
 until test.guess_number == test.guess_limit
   puts "Guess number: #{test.guess_number}"
   puts "Try to guess the word by inputting one letter!"
-  user_input = gets.chomp 
+  user_input = gets.chomp
   test.word_compare(user_input)
-  puts test.show_progress.join("")
+  puts "Current word status: #{test.show_progress.join("")}"
 end
+
+p test.guesses
