@@ -1,31 +1,36 @@
 =begin
-#class creation
-(insert here attr_reader & attr_accessor)
-Create word-guessing game class titled WordGame
+Create word-guessing game class titled GameOfWords
 Define initialize method
   Accepts a word "secret word" (that is going to be the word the 
   second user guesses)
-  Tracks @guess_count
-  Create letters array that contains all alphabetical letters, lowercase
-  and capitalized 
-  @game_over boolean 
+  Tracks a guess count and creates a guess count limit based on the 
+  secret word's length + 2
+  Guesses array that keeps track of all guesses
 
-Define check_word method
-  #Compares the secret_word instance variable with the user_word variable,
-  @game_over returns as true if secret_word and user_word perfectly match
-  #If any of the letters indexes in the secret_word match the user_word,
-  return the matching letters in the right place, dashes in the other. 
-  (i.e, if secret_word = snake and user_word = brake, return --ak-)
-  #User has the amount of guesses as length of secret word, meaning in the
-  example, user has 5 guesses (This will be done below in the user interface)
-  #Each time check_word run, increase guess count by 1 (if statement - 
-  "IF guess != previous guess, guess_count += 1")
+Define word_comparison method
+  Compares the secret_word instance variable with the player_guess variable
+  If any of the letters indexes in the secret_word match the player_guess,
+  return the matching letters in the right place, asterisks in the other. 
+  (i.e, if secret_word = toast and player_guess = t, return t***t)
+  All guesses enter the guesses array for later comparison
 
-#user interface (driver code)
-  **NEED MORE PSEUDO HERE**
+user interface (driver code)
+  Welcomes first player to the word game, invites them to enter a word
+  for the second player to guess
+  Once the word is entered, a new instance of GameOfWords is created
+  The console clears so the second player can't see the word 
+  Asterisks print to the console in place of the secret word, and player
+  2 is invited to guess the word one letter at a time
+  Guess count is increased by one with each guess (unless the guess 
+  has already been made.)
+  After every guess, the word status is printed to the console, showing
+  any matches with the right letter, asterisks in place of letters not
+  yet guessed.
+  IF the second player guesses all letters in the secret word before
+  the guess limit, then they are given a winning message. IF they fail
+  to do this, then they are treated with a taunting losing message.
+
 =end
-
-#Here's a solid basis for the word comparison:
 
 class GameOfWords
   attr_reader :guess_limit, :secret_guess, :secret_word, :guesses
@@ -49,6 +54,7 @@ class GameOfWords
   end
   
 end
+
 #user-interface
 
 puts "Welcome to the word game! Player 1, go ahead and enter a word:"
@@ -62,6 +68,7 @@ puts "Player 2, your turn to guess the word!"
 puts "Current word status:"
 puts "*" * word_game.secret_word.length
 
+#loop to track guesses and print the status of the word
 
 until word_game.guess_number == word_game.guess_limit || word_game.secret_guess.join("") == word_game.secret_word.join("")
   puts "Guess number: #{word_game.guess_number}"
@@ -75,6 +82,8 @@ until word_game.guess_number == word_game.guess_limit || word_game.secret_guess.
   word_game.word_comparison(player_guess)
   puts "Current word status: #{word_game.secret_guess.join("")}"
 end
+
+#code to determine a win or a loss
 
 if word_game.secret_guess.join("") == word_game.secret_word.join("")
   puts "Nice work, you won in #{word_game.guess_number} guesses!"
