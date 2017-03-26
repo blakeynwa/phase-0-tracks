@@ -28,35 +28,43 @@ Define check_word method
 #Here's a solid basis for the word comparison:
 
 class WordGame
-  attr_writer :secret_word
-  attr_reader :user
+  attr_reader 
+  attr_accessor :guess_number, :secret_word, :guess_limit, :game_over, 
+                :print_guesses, :guesses, :user, :show_progress
   
   def initialize(secret)
     @secret_word = secret
     @guess_number = 0 
     @game_over = false 
+    @guess_limit = secret.length
+    @guesses = []
+    @show_progress = " "
   end
 
   def word_compare(user)
-    show_progress = " "
-    @secret_word.chars.each do |letter|
-      if user.include?(letter)
-        show_progress << " #{letter} "
-      else
-        show_progress << " _ "
+    @guess_number += 1
+      @secret_word.chars.each do |letter|
+        if user.include?(letter)
+          show_progress << " #{letter} "
+        else
+          show_progress << " _ "
+        end
       end
-    end
-    show_progress
+     return show_progress
   end
-  
+
+
 end
+#user-interface
+
+puts "Welcome to the word game!"
+test = WordGame.new("Blake")
 
 
-  
-test = WordGame.new("toast")
-
-test.word_compare("t")
-
-
-
-
+until test.guess_number == test.guess_limit
+  puts "Guess number: #{test.guess_number}"
+  puts "Try to guess the word by inputting one letter!"
+  user_input = gets.chomp 
+  test.word_compare(user_input)
+  puts "Here's what you've guessed so far: #{test.show_progress}"
+end
