@@ -72,3 +72,9 @@ until test.guess_number == test.guess_limit
   test.word_compare(user_input)
   puts "Current word status: #{test.show_progress.join("")}"
 end
+
+if test.show_progress.join("") == test.secret_word.join("")
+  puts "Nice work, you won!"
+else
+  puts "Shame, you lost! Guess I'll have to find someone better"
+end
