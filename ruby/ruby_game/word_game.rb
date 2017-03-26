@@ -27,28 +27,25 @@ Define check_word method
 
 #Here's a solid basis for the word comparison:
 
-class WordGame
+class GameOfWords
   attr_reader 
-  attr_accessor :guess_number, :secret_word, :guess_limit, :game_over, 
-                :print_guesses, :guesses, :user, :show_progress, :dashes
-                :guess_array
+  attr_accessor :guess_number, :secret_word, :guess_limit, :guesses,                        :secret_guess
   
   def initialize(secret)
     @secret_word = secret.split("")
     @guess_number = 0 
-    @game_over = false 
     @guess_limit = secret.length
-    @show_progress = ("*" * secret.length).split("")
+    @secret_guess = ("*" * secret.length).split("")
     @guesses = []
   end
 
-  def word_compare(user_input)
+  def word_comparison(player_guess)
       @secret_word.each_with_index do |letter, i|
-        if letter.include?(user_input)
-          @show_progress[i] = letter
+        if letter.include?(player_guess)
+          @secret_guess[i] = letter
         end
       end
-      @guesses << user_input
+      @guesses << player_guess
   end
   
 end
@@ -56,25 +53,25 @@ end
 
 puts "Welcome to the word game! Player 1, go ahead and enter a word:"
 secret_input = gets.chomp
-test = WordGame.new(secret_input)
+word_game = GameOfWords.new(secret_input)
 puts "Current word status:"
-puts "*" * test.secret_word.length
+puts "*" * word_game.secret_word.length
 
 
-until test.guess_number == test.guess_limit || test.show_progress.join("") == test.secret_word.join("")
-  puts "Guess number: #{test.guess_number}"
+until word_game.guess_number == word_game.guess_limit || word_game.secret_guess.join("") == word_game.secret_word.join("")
+  puts "Guess number: #{word_game.guess_number}"
   puts "Try to guess the word by inputting one letter!"
-  user_input = gets.chomp
-  if test.guesses.include?(user_input)
+  player_guess = gets.chomp
+  if word_game.guesses.include?(player_guess)
     puts "You already guessed that letter, try another!"
   else
-    test.guess_number += 1
+    word_game.guess_number += 1
   end
-  test.word_compare(user_input)
-  puts "Current word status: #{test.show_progress.join("")}"
+  word_game.word_comparison(player_guess)
+  puts "Current word status: #{word_game.secret_guess.join("")}"
 end
 
-if test.show_progress.join("") == test.secret_word.join("")
+if word_game.secret_guess.join("") == word_game.secret_word.join("")
   puts "Nice work, you won!"
 else
   puts "Shame, you lost! Guess I'll have to find someone better"
