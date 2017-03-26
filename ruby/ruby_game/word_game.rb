@@ -58,7 +58,7 @@ system("clear") #This command clears the console so the player guessing
                 #can't see the previous user's input. I know it works on
                 #Mac, not sure about others. If it errors out feel free
                 #to remove it.
-                
+puts "Player 2, your turn to guess the word!"               
 puts "Current word status:"
 puts "*" * word_game.secret_word.length
 
