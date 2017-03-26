@@ -28,13 +28,13 @@ Define check_word method
 #Here's a solid basis for the word comparison:
 
 class GameOfWords
-  attr_reader 
-  attr_accessor :guess_number, :secret_word, :guess_limit, :guesses,                        :secret_guess
+  attr_reader :guess_limit, :secret_guess, :secret_word, :guesses
+  attr_accessor :guess_number                       
   
   def initialize(secret)
     @secret_word = secret.split("")
     @guess_number = 0 
-    @guess_limit = secret.length
+    @guess_limit = secret.length + 2
     @secret_guess = ("*" * secret.length).split("")
     @guesses = []
   end
@@ -58,7 +58,7 @@ system("clear") #This command clears the console so the player guessing
                 #can't see the previous user's input. I know it works on
                 #Mac, not sure about others. If it errors out feel free
                 #to remove it.
-puts "Player 2, your turn to guess the word!"               
+puts "Player 2, your turn to guess the word!"
 puts "Current word status:"
 puts "*" * word_game.secret_word.length
 
@@ -77,7 +77,7 @@ until word_game.guess_number == word_game.guess_limit || word_game.secret_guess.
 end
 
 if word_game.secret_guess.join("") == word_game.secret_word.join("")
-  puts "Nice work, you won!"
+  puts "Nice work, you won in #{word_game.guess_number} guesses!"
 else
   puts "Shame, you lost! Guess I'll have to find someone better"
 end
