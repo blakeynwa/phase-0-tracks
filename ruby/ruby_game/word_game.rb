@@ -54,13 +54,14 @@ class WordGame
 end
 #user-interface
 
-puts "Welcome to the word game!"
-test = WordGame.new("toast")
+puts "Welcome to the word game! Player 1, go ahead and enter a word:"
+secret_input = gets.chomp
+test = WordGame.new(secret_input)
 puts "Current word status:"
 puts "*" * test.secret_word.length
 
 
-until test.guess_number == test.guess_limit
+until test.guess_number == test.guess_limit || test.show_progress.join("") == test.secret_word.join("")
   puts "Guess number: #{test.guess_number}"
   puts "Try to guess the word by inputting one letter!"
   user_input = gets.chomp
