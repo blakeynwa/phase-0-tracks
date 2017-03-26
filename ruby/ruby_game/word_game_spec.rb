@@ -15,6 +15,4 @@ describe GameOfWords do
     expect(word_game.secret_guess).to eq ["*", "*", "*", "*", "*"]
   end
 
-
-
 end
