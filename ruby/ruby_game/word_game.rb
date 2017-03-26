@@ -43,7 +43,6 @@ class WordGame
   end
 
   def word_compare(user_input)
-    @guess_number += 1
       @secret_word.each_with_index do |letter, i|
         if letter.include?(user_input)
           @show_progress[i] = letter
@@ -51,6 +50,7 @@ class WordGame
       end
       @guesses << user_input
   end
+  
 end
 #user-interface
 
@@ -64,8 +64,11 @@ until test.guess_number == test.guess_limit
   puts "Guess number: #{test.guess_number}"
   puts "Try to guess the word by inputting one letter!"
   user_input = gets.chomp
+  if test.guesses.include?(user_input)
+    puts "You already guessed that letter, try another!"
+  else
+    test.guess_number += 1
+  end
   test.word_compare(user_input)
   puts "Current word status: #{test.show_progress.join("")}"
 end
-
-p test.guesses
