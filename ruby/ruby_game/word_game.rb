@@ -33,27 +33,21 @@ class WordGame
                 :print_guesses, :guesses, :user, :show_progress, :dashes
   
   def initialize(secret)
-    @secret_word = secret
+    @secret_word = secret.split("")
     @guess_number = 0 
     @game_over = false 
     @guess_limit = secret.length
-    @show_progress = []
-    @dashes = ["*" * secret.length]
+    @show_progress = ("*" * secret.length).split("")
   end
 
-  def word_compare(user)
+  def word_compare(user_input)
     @guess_number += 1
-      @secret_word.chars.each do |letter|
-        if user.include?(letter)
-          @show_progress << "#{letter}"
-        else
-          @show_progress << "*"
+      @secret_word.each_with_index do |letter, i|
+        if letter.include?(user_input)
+          @show_progress[i] = letter
         end
       end
-      return @show_progress
   end
-
-
 end
 #user-interface
 
@@ -67,16 +61,4 @@ until test.guess_number == test.guess_limit
   user_input = gets.chomp 
   test.word_compare(user_input)
   puts test.show_progress.join("")
-  puts test.dashes
 end
-
-
-
-
-
-
-
-
-
-
-
