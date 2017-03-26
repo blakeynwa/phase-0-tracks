@@ -54,6 +54,7 @@ end
 puts "Welcome to the word game! Player 1, go ahead and enter a word:"
 secret_input = gets.chomp
 word_game = GameOfWords.new(secret_input)
+system("clear")
 puts "Current word status:"
 puts "*" * word_game.secret_word.length
 
