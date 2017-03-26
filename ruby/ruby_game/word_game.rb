@@ -54,7 +54,11 @@ end
 puts "Welcome to the word game! Player 1, go ahead and enter a word:"
 secret_input = gets.chomp
 word_game = GameOfWords.new(secret_input)
-system("clear")
+system("clear") #This command clears the console so the player guessing
+                #can't see the previous user's input. I know it works on
+                #Mac, not sure about others. If it errors out feel free
+                #to remove it.
+                
 puts "Current word status:"
 puts "*" * word_game.secret_word.length
 
