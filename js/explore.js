@@ -14,3 +14,11 @@ function reverse(string) {
 }
 
 console.log(reverse("hello"));
+
+var reversedWord = reverse("devbootcamp")
+
+if (1 == 1) {
+  console.log(reversedWord);
+} else {
+  console.log("Sorry, that's not true!")
+}
