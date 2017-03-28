@@ -7,3 +7,10 @@
 //should return the array with the characters reversed, and finally 
 //I'll join the array into a single string, which should provide the reversed
 //string with no spaces. 
+
+function reverse(string) {
+  return string.split("").reverse().join("");
+
+}
+
+console.log(reverse("hello"));
