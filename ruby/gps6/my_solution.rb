@@ -79,7 +79,25 @@ end
 
 
 
+#REFLECT
+=begin
+What are the differences between the two different hash syntaxes shown in the state_data file?
+STATE_DATE is a constant, meaning the value is supposed to remain constant.
 
+What does require_relative do? How is it different from require?
+require accesses built in ruby modules
+require_relative allows you to load a file that's relative (in the same
+directory) as your current file
+What are some ways to iterate through a hash?
+There's a number of ways... each, each_key, each_value, each_pair
+When refactoring virus_effects, what stood out to you about the variables, if anything?
+The number of times the variables were written out was redundant.
+What concept did you most solidify in this challenge?
+I solidified iterating through data structures. It was really helpful
+to have our pair answer necessary questions and speak out our thoughts
+to help us picture what we needed to do. 
+
+=end
 
 # DRIVER CODE
  # initialize VirusPredictor for each state
