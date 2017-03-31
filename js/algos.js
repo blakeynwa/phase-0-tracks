@@ -1,4 +1,6 @@
-/*Create an array with words or phrases of various length using var longWords
+/*
+Release 0 pseudocode:
+Create an array with words or phrases of various length using var longWords
 For the quickest way to access the longest word, sort the strings in the array
 in descending order based on length. What this will look like: if the array contains
 the words "toast", "hi", "computer", and "coffee", the sort function will change the 
@@ -9,7 +11,12 @@ will sort the array in descending order of length. According to the MDN resource
 if the outcome of a.length - b.length is negative, it will sort 'a' to a lower index
 than 'b', which is exactly what we're trying to accomplish. Once sorting is complete, 
 log the last index string to the console using pop, which returns the final index of 
-an array. */
+an array.
+
+Release 1 pseudocode:
+Create a function that checks 2 objects for a matching key-value pair. If 
+the function is called with {name: "Steven", age: 54} and {name: "Tamir", age: 54},
+the function will return true.  */
 
 //Functions, Arrays, Objects
 
@@ -29,9 +36,25 @@ moreWords.sort(function(a, b) {
   return a.length - b.length;
 });
 
+function matchNameAge(a, b) {
+  for(i in a) {
+  (i, a[i])
+} 
+ for(j in b) {
+   (j, b[j])
+ }
+ if (a[i] == b[j]) {
+   return true;
+ } else {
+   return false 
+ }
+}
+
 
 //Driver Code
 
 console.log(longWords.pop())
 console.log(otherWords.pop())
 console.log(moreWords.pop())
+
+matchNameAge({name: "Steven", age: 54}, {name: "Tamir", age: 54});
