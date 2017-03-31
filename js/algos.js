@@ -11,6 +11,8 @@ than 'b', which is exactly what we're trying to accomplish. Once sorting is comp
 log the last index string to the console using pop, which returns the final index of 
 an array. */
 
+//Functions, Arrays, Objects
+
 var longWords = ["hi", "toast", "coffee", "computer"]
 var otherWords = ["hello", "dinosaur", "pacific ocean", "california"]
 var moreWords = ["burrito", "taco", "margarita", "Central America"]
@@ -19,16 +21,17 @@ longWords.sort(function(a, b) {
   return a.length - b.length;
 });
 
-console.log(longWords.pop())
-
 otherWords.sort(function(a, b) {
   return a.length - b.length;
 });
-
-console.log(otherWords.pop())
 
 moreWords.sort(function(a, b) {
   return a.length - b.length;
 });
 
+
+//Driver Code
+
+console.log(longWords.pop())
+console.log(otherWords.pop())
 console.log(moreWords.pop())
