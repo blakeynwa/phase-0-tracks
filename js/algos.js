@@ -11,3 +11,10 @@ than 'b', which is exactly what we're trying to accomplish. Once sorting is comp
 log the last index string to the console using pop, which returns the final index of 
 an array. */
 
+var longWords = ["hi", "toast", "coffee", "computer"]
+
+longWords.sort(function(a, b) {
+  return a.length - b.length;
+});
+
+console.log(longWords.pop())
