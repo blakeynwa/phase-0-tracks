@@ -72,9 +72,9 @@ loop do
   puts "Please enter your first and last name (or type quit to stop input)"
   username = gets.chomp 
     break if username == "quit"
-  aliases[:original] = username
-  aliases[:encrypt] = encrypted_name(username)
-  puts "#{aliases[:original]} is your real name, but #{aliases[:encrypt]} is your encrypted name."
+  aliases[username] = encrypted_name(username)
 end
 
-  
+aliases.each do | k, v |
+  puts "Your original name is #{k}, and your encrypted name is #{v}"
+end

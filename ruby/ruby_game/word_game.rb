@@ -90,3 +90,4 @@ if word_game.secret_guess.join("") == word_game.secret_word.join("")
 else
   puts "Shame, you had #{word_game.guess_number} guesses and still lost! Guess I'll have to find someone better"
 end
+
