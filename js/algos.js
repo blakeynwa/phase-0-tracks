@@ -12,9 +12,23 @@ log the last index string to the console using pop, which returns the final inde
 an array. */
 
 var longWords = ["hi", "toast", "coffee", "computer"]
+var otherWords = ["hello", "dinosaur", "pacific ocean", "california"]
+var moreWords = ["burrito", "taco", "margarita", "Central America"]
 
 longWords.sort(function(a, b) {
   return a.length - b.length;
 });
 
 console.log(longWords.pop())
+
+otherWords.sort(function(a, b) {
+  return a.length - b.length;
+});
+
+console.log(otherWords.pop())
+
+moreWords.sort(function(a, b) {
+  return a.length - b.length;
+});
+
+console.log(moreWords.pop())
