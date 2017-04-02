@@ -24,17 +24,13 @@ var longWords = ["hi", "toast", "coffee", "computer"]
 var otherWords = ["hello", "dinosaur", "pacific ocean", "california"]
 var moreWords = ["burrito", "taco", "margarita", "Central America"]
 
-longWords.sort(function(a, b) {
-  return a.length - b.length;
-});
 
-otherWords.sort(function(a, b) {
-  return a.length - b.length;
-});
 
-moreWords.sort(function(a, b) {
-  return a.length - b.length;
-});
+function longestWord(arry) {
+  var currentLongest = arry.sort(function(a, b) { return b.length - a.length; });
+  return currentLongest[0];
+}
+
 
 function matchNameAge(a, b) {
   for(i in a) {
@@ -53,8 +49,8 @@ function matchNameAge(a, b) {
 
 //Driver Code
 
-console.log(longWords.pop())
-console.log(otherWords.pop())
-console.log(moreWords.pop())
+console.log(longestWord(longWords));
+console.log(longestWord(otherWords));
+console.log(longestWord(moreWords));
 
 matchNameAge({name: "Steven", age: 54}, {name: "Tamir", age: 54});
