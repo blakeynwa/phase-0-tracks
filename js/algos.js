@@ -46,6 +46,16 @@ function matchNameAge(a, b) {
  return false;
 }
 
+function testForNow(int){
+  var lettersNumbers = "a1c2f4g3z7x8l9omqrk";
+  randString = " ";
+  randArray = [];
+  for (var i = 0; i < Math.floor((Math.random() * 10) + 1); i++){
+    randString += lettersNumbers.charAt(Math.floor(Math.random() * lettersNumbers.length));
+  }
+  return randString;
+}
+
 
 //Driver Code
 //Release 0:
@@ -59,3 +69,6 @@ console.log(longestWord(moreWords));
 console.log(matchNameAge({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
 //false match
 console.log(matchNameAge({name: "Steven", age: 53}, {name: "Tamir", age: 54}));
+
+//Release 2:
+console.log(testForNow(10));
