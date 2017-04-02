@@ -15,7 +15,9 @@ log the 0 index string to the console.
 Release 1 pseudocode:
 Create a function that checks 2 objects for a matching key-value pair. If 
 the function is called with {name: "Steven", age: 54} and {name: "Tamir", age: 54},
-the function will return true.  */
+the function will return true. Function allows the object to be looked at and index 
+the keys and the values, then compare keys and values for equality across two objects.
+ */
 
 //Functions, Arrays, Objects
 
@@ -46,11 +48,13 @@ function matchNameAge(a, b) {
 
 
 //Driver Code
-
+//Release 0:
 console.log(longestWord(longWords));
 console.log(longestWord(otherWords));
 console.log(longestWord(moreWords));
 
+
+//Release 1:
 //true match
 console.log(matchNameAge({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
 //false match
