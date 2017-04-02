@@ -17,6 +17,14 @@ Create a function that checks 2 objects for a matching key-value pair. If
 the function is called with {name: "Steven", age: 54} and {name: "Tamir", age: 54},
 the function will return true. Function allows the object to be looked at and index 
 the keys and the values, then compare keys and values for equality across two objects.
+
+Release 2 pseudocode:
+Create random generator function. Right away, define 3 items within the function: empty
+randArray to store randomly generated strings, empty randString to allow creation of 
+random strings, and lettersNumbers string containing various letters and numbers. Create
+a while loop that generates random strings until the number given the as an argument to 
+the function is met. Once the strings are done being generated, push the strings into 
+the randArray.
  */
 
 //Functions, Arrays, Objects
