@@ -6,12 +6,11 @@ in descending order based on length. What this will look like: if the array cont
 the words "toast", "hi", "computer", and "coffee", the sort function will change the 
 array order to "hi", "toast", "coffee", and "computer". In order to accomplish this, 
 create a sort function that compares strings in their indexes (in this case function
-(a, b)). In the function, pass a parameter that is "return a.length - b.length," that 
+(a, b)). In the function, pass a parameter that is "return b.length - a.length," that 
 will sort the array in descending order of length. According to the MDN resources, 
-if the outcome of a.length - b.length is negative, it will sort 'a' to a lower index
-than 'b', which is exactly what we're trying to accomplish. Once sorting is complete, 
-log the last index string to the console using pop, which returns the final index of 
-an array.
+if the outcome of b.length - a.length is negative, it will sort 'b' to a lower index
+than 'a', which is exactly what we're trying to accomplish. Once sorting is complete, 
+log the 0 index string to the console.
 
 Release 1 pseudocode:
 Create a function that checks 2 objects for a matching key-value pair. If 
@@ -34,16 +33,15 @@ function longestWord(arry) {
 
 function matchNameAge(a, b) {
   for(i in a) {
-  (i, a[i])
+  (i, a[i]);
 } 
  for(j in b) {
-   (j, b[j])
+   (j, b[j]);
  }
  if (a[i] == b[j]) {
    return true;
- } else {
-   return false 
- }
+ } 
+ return false;
 }
 
 
@@ -53,4 +51,7 @@ console.log(longestWord(longWords));
 console.log(longestWord(otherWords));
 console.log(longestWord(moreWords));
 
-matchNameAge({name: "Steven", age: 54}, {name: "Tamir", age: 54});
+//true match
+console.log(matchNameAge({name: "Steven", age: 54}, {name: "Tamir", age: 54}));
+//false match
+console.log(matchNameAge({name: "Steven", age: 53}, {name: "Tamir", age: 54}));
