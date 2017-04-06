@@ -1,0 +1,81 @@
+Solo Challenge 8.3
+1. Display the information in one table:
+
+sqlite> select * from popular_locations;
+id          location_type  location_name  busy        ranking     city_id   
+----------  -------------  -------------  ----------  ----------  ----------
+1           Beach          Venice Beach   true        10          1         
+2           Landmark       Hollywood Sig  false       9           1         
+3           Beach          Torrey Pines   true        2           2         
+4           Park           Balboa Park    true        1           2         
+5           Landmark       Golden Gate B  true        3           3         
+6           Park           Golden Gate P  true        4           3         
+7           Resort         Heavenly       true        5           4         
+8           Landmark       Lake Tahoe     false       6           4         
+9           Landmark       State Capitol  false       7           5         
+10          Museum         Crocker Art M  false       8           5         
+
+2. Update an item that meets some condition:
+
+sqlite> update popular_locations set busy="false" where busy="true";
+sqlite> select * from popular_locations;
+id          location_type  location_name  busy        ranking     city_id   
+----------  -------------  -------------  ----------  ----------  ----------
+1           Beach          Venice Beach   false       10          1         
+2           Landmark       Hollywood Sig  false       9           1         
+3           Beach          Torrey Pines   false       2           2         
+4           Park           Balboa Park    false       1           2         
+5           Landmark       Golden Gate B  false       3           3         
+6           Park           Golden Gate P  false       4           3         
+7           Resort         Heavenly       false       5           4         
+8           Landmark       Lake Tahoe     false       6           4         
+9           Landmark       State Capitol  false       7           5         
+10          Museum         Crocker Art M  false       8           5   
+
+3. Display the information in both tables using one query:
+
+sqlite> select * from california_cities, popular_locations where popular_locations.city_id = california_cities.id;
+id          city_name    id          location_type  location_name  busy        ranking     city_id   
+----------  -----------  ----------  -------------  -------------  ----------  ----------  ----------
+1           Los Angeles  1           Beach          Venice Beach   false       10          1         
+1           Los Angeles  2           Landmark       Hollywood Sig  false       9           1         
+2           San Diego    3           Beach          Torrey Pines   false       2           2         
+2           San Diego    4           Park           Balboa Park    false       1           2         
+3           San Franci  5           Landmark       Golden Gate B  false       3           3         
+3           San Franci  6           Park           Golden Gate P  false       4           3         
+4           Tahoe        7           Resort         Heavenly       false       5           4         
+4           Tahoe        8           Landmark       Lake Tahoe     false       6           4         
+5           Sacramento   9           Landmark       State Capitol  false       7           5         
+5           Sacramento   10          Museum         Crocker Art M  false       8           5   
+
+4. Display a narrower selection of columns from both tables using one query:
+
+sqlite> select location_type, location_name, city_name from popular_locations, california_cities where popular_locations.city_id = california_cities.id;
+location_type  location_name  city_name  
+-------------  -------------  -----------
+Beach          Venice Beach   Los Angeles
+Landmark       Hollywood Sig  Los Angeles
+Beach          Torrey Pines   San Diego  
+Park           Balboa Park    San Diego  
+Landmark       Golden Gate B  San Franci
+Park           Golden Gate P  San Franci
+Resort         Heavenly       Tahoe      
+Landmark       Lake Tahoe     Tahoe      
+Landmark       State Capitol  Sacramento 
+Museum         Crocker Art M  Sacramento 
+
+5. Delete an item that meets some condition
+
+sqlite> delete from california_cities where city_name = "Sacramento";
+sqlite> select location_type, location_name, city_name from popular_locations, california_cities where popular_locations.city_id = california_cities.id;
+location_type  location_name  city_name  
+-------------  -------------  -----------
+Beach          Venice Beach   Los Angeles
+Landmark       Hollywood Sig  Los Angeles
+Beach          Torrey Pines   San Diego  
+Park           Balboa Park    San Diego  
+Landmark       Golden Gate B  San Franci
+Park           Golden Gate P  San Franci
+Resort         Heavenly       Tahoe      
+Landmark       Lake Tahoe     Tahoe      
+
