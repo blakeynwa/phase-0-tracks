@@ -1,0 +1,20 @@
+sqlite> select * from businesses, users, reviews where reviews.users_id = users.id and reviews.business_id = businesses.id;
+id          name          id          first_name  last_name   id          stars       comment     users_id    business_id
+----------  ------------  ----------  ----------  ----------  ----------  ----------  ----------  ----------  -----------
+2           Modern Times  1           Ian         Gonnella    1           4           Delish!     1           2          
+1           Young Hickor  2           Blake       Meyer       2           2           Meh         2           1          
+3           Dark Horse    3           Plastic     Soldier     3           1           Disgusting  3           3     
+
+
+
+sqlite> select users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment from users, businesses join reviews on reviews.users_id = users.id and reviews.business_id = businesses.id;
+first_name  last_name   name          stars       comment   
+----------  ----------  ------------  ----------  ----------
+Ian         Gonnella    Modern Times  4           Delish!   
+Blake       Meyer       Young Hickor  2           Meh       
+Plastic     Soldier     Dark Horse    1           Disgusting
+
+sqlite> select users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment from users, businesses join reviews on reviews.users_id = users.id and reviews.business_id = businesses.id where businesses.name = "Modern Times";
+first_name  last_name   name          stars       comment   
+----------  ----------  ------------  ----------  ----------
+Ian         Gonnella    Modern Times  4           Delish!   
