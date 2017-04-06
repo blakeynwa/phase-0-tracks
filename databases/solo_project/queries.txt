@@ -79,3 +79,77 @@ Park           Golden Gate P  San Franci
 Resort         Heavenly       Tahoe      
 Landmark       Lake Tahoe     Tahoe      
 
+Release 3:
+
+Cross Join:
+sqlite> select location_type, location_name from popular_locations cross join california_cities;
+location_type  location_name
+-------------  -------------
+Beach          Venice Beach 
+Beach          Venice Beach 
+Beach          Venice Beach 
+Beach          Venice Beach 
+Landmark       Hollywood Sig
+Landmark       Hollywood Sig
+Landmark       Hollywood Sig
+Landmark       Hollywood Sig
+Beach          Torrey Pines 
+Beach          Torrey Pines 
+Beach          Torrey Pines 
+Beach          Torrey Pines 
+Park           Balboa Park  
+Park           Balboa Park  
+Park           Balboa Park  
+Park           Balboa Park  
+Landmark       Golden Gate B
+Landmark       Golden Gate B
+Landmark       Golden Gate B
+Landmark       Golden Gate B
+Park           Golden Gate P
+Park           Golden Gate P
+Park           Golden Gate P
+Park           Golden Gate P
+Resort         Heavenly     
+Resort         Heavenly     
+Resort         Heavenly     
+Resort         Heavenly     
+Landmark       Lake Tahoe   
+Landmark       Lake Tahoe   
+Landmark       Lake Tahoe   
+Landmark       Lake Tahoe   
+Landmark       State Capitol
+Landmark       State Capitol
+Landmark       State Capitol
+Landmark       State Capitol
+Museum         Crocker Art M
+Museum         Crocker Art M
+Museum         Crocker Art M
+Museum         Crocker Art M
+
+Inner Join:
+sqlite> select city_id, location_name, location_type from popular_locations inner join california_cities on popular_locations.city_id = california_cities.id;
+city_id     location_name  location_type
+----------  -------------  -------------
+1           Venice Beach   Beach        
+1           Hollywood Sig  Landmark     
+2           Torrey Pines   Beach        
+2           Balboa Park    Park         
+3           Golden Gate B  Landmark     
+3           Golden Gate P  Park         
+4           Heavenly       Resort       
+4           Lake Tahoe     Landmark    
+
+Outer Join:
+sqlite> select city_id, location_name, location_type from popular_locations left outer join california_cities on popular_locations.city_id = california_cities.id;
+city_id     location_name  location_type
+----------  -------------  -------------
+1           Venice Beach   Beach        
+1           Hollywood Sig  Landmark     
+2           Torrey Pines   Beach        
+2           Balboa Park    Park         
+3           Golden Gate B  Landmark     
+3           Golden Gate P  Park         
+4           Heavenly       Resort       
+4           Lake Tahoe     Landmark     
+5           State Capitol  Landmark     
+5           Crocker Art M  Museum       
