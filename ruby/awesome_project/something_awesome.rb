@@ -54,16 +54,26 @@ def display_beers(db)
   end
 end
 
+def update_ranking(db)
+  puts "Please enter the name of the beer's ranking you would like to update"
+    user_response = gets.chomp
+  puts "And what would you like to update the ranking to?"
+    new_ranking = gets.chomp.to_i
+  db.execute("UPDATE beer_tracker SET ranking=? WHERE beer_name=?", [new_ranking, user_response])
+end
+
 def intro(db)
   puts "Welcome to the beer tracker!"
   puts "I'm a program that can track the beer you drink."
   puts "I'm going to guide you through some questions to start."
-  puts "What would you like done? (Add beer, View my beers)"
+  puts "What would you like done? (Add beer, View my beers, Update ranking)"
     user_response = gets.chomp
     if user_response == "View my beers"
       display_beers(db)
     elsif user_response == "Add beer"
       beer_adder(db)
+    elsif user_response == "Update ranking"
+      update_ranking(db)
     end 
 end
 
