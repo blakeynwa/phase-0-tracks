@@ -19,7 +19,7 @@ db.execute(create_table)
 
 def beer_adder(db)
   loop do 
-    puts "Would you like to add more beer? Type done if you are finished"
+    puts "Would you like to add more beer? (yes/no)"
       user_response = gets.chomp
       if user_response == "yes"
         puts "What brewery created this fine beer?"
@@ -37,7 +37,7 @@ def beer_adder(db)
         db.execute("INSERT INTO beer_tracker (brewery, beer_name, style, abv, date, ranking)
         VALUES (?, ?, ?, ?, ?, ?)", [brewery, beer_name, style, abv, date, ranking])
       end
-    break if user_response == "done"
+    break if user_response == "no"
   end
 end
 
@@ -58,7 +58,7 @@ def intro(db)
   puts "Welcome to the beer tracker!"
   puts "I'm a program that can track the beer you drink."
   puts "I'm going to guide you through some questions to start."
-  puts "What would you like done? (Add beer, view the beers you've added)"
+  puts "What would you like done? (Add beer, View my beers)"
     user_response = gets.chomp
     if user_response == "View my beers"
       display_beers(db)
