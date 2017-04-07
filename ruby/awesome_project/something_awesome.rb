@@ -74,10 +74,36 @@ def delete_beer(db)
   db.execute("DELETE FROM beer_tracker WHERE beer_name=?", [user_response])
 end
 
+def favorites(db)
+  puts "Here are the beers you ranked higher than 7/10!"
+  fav_beers = db.execute("SELECT * FROM beer_tracker WHERE ranking>7")
+  fav_beers.each do |beer|
+    puts ""
+    puts "Name: #{beer['brewery']} #{beer['beer_name']}"
+    puts "Style: #{beer['style']}"
+    puts "ABV: #{beer['abv']}%"
+    puts "Date Consumed: #{beer['date']}"
+    puts "Ranking: #{beer['ranking']}/10"
+  end
+end
+
+def high_abv(db)
+  puts "If you want to get drunk, here are all the beers with ABV over 7!"
+  drunk = db.execute("SELECT * FROM beer_tracker WHERE abv>7")
+  drunk.each do |beer|
+    puts ""
+    puts "Name: #{beer['brewery']} #{beer['beer_name']}"
+    puts "Style: #{beer['style']}"
+    puts "ABV: #{beer['abv']}%"
+    puts "Date Consumed: #{beer['date']}"
+    puts "Ranking: #{beer['ranking']}/10"
+  end
+end
+
 def questions(db)
   intro
   loop do 
-  puts "How can I help you? (Add beer, View my beers, Update ranking, Delete an entry, or if you're done type All done!)"
+  puts "How can I help you? (Add beer, View my beers, Update ranking, Show favorites, Delete an entry, I want to get drunk! or if you're done type All done!)"
     user_response = gets.chomp
     if user_response == "View my beers"
       display_beers(db)
@@ -87,6 +113,10 @@ def questions(db)
       update_ranking(db)
     elsif user_response == "Delete an entry"
       delete_beer(db)
+    elsif user_response == "Show favorites"
+      favorites(db)
+    elsif user_response == "I want to get drunk!"
+      high_abv(db)
     elsif user_response == "All done!"
       puts ""
     else
