@@ -20,18 +20,35 @@ puts "Welcome to the beer tracker! I'm a program that can track
 the beer you drink. I'm going to guide you through some questions to 
 add your beer..."
 
-puts "What brewery created this fine beer?"
-  brewery = gets.chomp
-puts "What's the beer's name?"
-  beer_name = gets.chomp
-puts "What style is this beer?"
-  style = gets.chomp
-puts "What is the abv? Whole numbers please!"
-  abv = gets.chomp
-puts "What date did you consume this beer? (typed out please!)"
-  date = gets.chomp
-puts "Out of 10 stars, what would you rank this beer?"
-  ranking = gets.chomp
+def beer_adder(db)
+  puts "What brewery created this fine beer?"
+    brewery = gets.chomp
+  puts "What's the beer's name?"
+    beer_name = gets.chomp
+  puts "What style is this beer?"
+    style = gets.chomp
+  puts "What is the abv? Whole numbers please!"
+    abv = gets.chomp
+  puts "What date did you consume this beer? (typed out please!)"
+    date = gets.chomp
+  puts "Out of 10 stars, what would you rank this beer?"
+    ranking = gets.chomp
+  db.execute("INSERT INTO beer_tracker (brewery, beer_name, style, abv, date, ranking)
+   VALUES (?, ?, ?, ?, ?, ?)", [brewery, beer_name, style, abv, date, ranking])
+end
 
-db.execute("INSERT INTO beer_tracker (brewery, beer_name, style, abv, date, ranking) VALUES (?, ?, ?, ?, ?, ?)", [brewery, beer_name, style, abv, date, ranking])
+def looper(db)
+  loop do 
+    puts "Would you like to add more beer? Type done if you are finished"
+      user_response = gets.chomp
+      if user_response == "yes"
+        beer_adder(db)
+      end
+    break if user_response == "done"
+  end
+end
+
+looper(db)
+
+
 
