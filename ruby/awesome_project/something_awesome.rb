@@ -1,6 +1,7 @@
 require 'sqlite3'
 
 db = SQLite3::Database.new("beertracker.db")
+db.results_as_hash = true 
 
 create_table = <<-SQL 
   CREATE TABLE IF NOT EXISTS beer_tracker(
@@ -48,7 +49,19 @@ def looper(db)
   end
 end
 
-looper(db)
+def display_beers(db)
+  puts "Here's all the beers you've entered so far:"
+  total_beers = db.execute("SELECT * FROM beer_tracker")
+  total_beers.each do |beer|
+    puts "Name: #{beer['brewery']} #{beer['beer_name']}
+          Style: #{beer['style']}
+          ABV: #{beer['abv']}
+          Date Consumed: #{beer['date']}
+          Ranking out of 10: #{beer['ranking']}"
+  end
+end
 
+looper(db)
+display_beers(db)
 
 
