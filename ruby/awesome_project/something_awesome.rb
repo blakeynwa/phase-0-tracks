@@ -62,11 +62,16 @@ def update_ranking(db)
   db.execute("UPDATE beer_tracker SET ranking=? WHERE beer_name=?", [new_ranking, user_response])
 end
 
-def intro(db)
+def intro
   puts "Welcome to the beer tracker!"
   puts "I'm a program that can track the beer you drink."
   puts "I'm going to guide you through some questions to start."
-  puts "What would you like done? (Add beer, View my beers, Update ranking)"
+end
+
+def questions(db)
+  intro
+  loop do 
+  puts "How can I help you? (Add beer, View my beers, Update ranking)"
     user_response = gets.chomp
     if user_response == "View my beers"
       display_beers(db)
@@ -75,8 +80,11 @@ def intro(db)
     elsif user_response == "Update ranking"
       update_ranking(db)
     end 
+   break if user_response == "All done!"
+  end
+  puts "Thank you for using the beer tracker!"
 end
 
-intro(db)
+questions(db)
 
 
