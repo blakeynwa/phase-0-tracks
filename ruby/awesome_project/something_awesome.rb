@@ -77,7 +77,7 @@ end
 def questions(db)
   intro
   loop do 
-  puts "How can I help you? (Add beer, View my beers, Update ranking, Delete an entry)"
+  puts "How can I help you? (Add beer, View my beers, Update ranking, Delete an entry, or if you're done type All done!)"
     user_response = gets.chomp
     if user_response == "View my beers"
       display_beers(db)
@@ -87,6 +87,10 @@ def questions(db)
       update_ranking(db)
     elsif user_response == "Delete an entry"
       delete_beer(db)
+    elsif user_response == "All done!"
+      puts ""
+    else
+      puts "Sorry, I don't understand that!"
     end 
    break if user_response == "All done!"
   end
