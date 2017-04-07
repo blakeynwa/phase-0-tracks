@@ -68,12 +68,16 @@ def update_ranking(db)
   db.execute("UPDATE beer_tracker SET ranking=? WHERE beer_name=?", [new_ranking, user_response])
 end
 
-
+def delete_beer(db)
+  puts "What's the name of the beer you want to delete?"
+    user_response = gets.chomp
+  db.execute("DELETE FROM beer_tracker WHERE beer_name=?", [user_response])
+end
 
 def questions(db)
   intro
   loop do 
-  puts "How can I help you? (Add beer, View my beers, Update ranking)"
+  puts "How can I help you? (Add beer, View my beers, Update ranking, Delete an entry)"
     user_response = gets.chomp
     if user_response == "View my beers"
       display_beers(db)
@@ -81,6 +85,8 @@ def questions(db)
       beer_adder(db)
     elsif user_response == "Update ranking"
       update_ranking(db)
+    elsif user_response == "Delete an entry"
+      delete_beer(db)
     end 
    break if user_response == "All done!"
   end
