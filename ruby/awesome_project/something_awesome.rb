@@ -54,10 +54,10 @@ def display_beers(db)
   total_beers = db.execute("SELECT * FROM beer_tracker")
   total_beers.each do |beer|
     puts "Name: #{beer['brewery']} #{beer['beer_name']}
-          Style: #{beer['style']}
-          ABV: #{beer['abv']}
-          Date Consumed: #{beer['date']}
-          Ranking out of 10: #{beer['ranking']}"
+    Style: #{beer['style']}
+    ABV: #{beer['abv']}%
+    Date Consumed: #{beer['date']}
+    Ranking: #{beer['ranking']}/10"
   end
 end
 
