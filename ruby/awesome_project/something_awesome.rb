@@ -17,33 +17,25 @@ SQL
 
 db.execute(create_table)
 
-puts "Welcome to the beer tracker! I'm a program that can track 
-the beer you drink. I'm going to guide you through some questions to 
-add your beer..."
-
 def beer_adder(db)
-  puts "What brewery created this fine beer?"
-    brewery = gets.chomp
-  puts "What's the beer's name?"
-    beer_name = gets.chomp
-  puts "What style is this beer?"
-    style = gets.chomp
-  puts "What is the abv? Whole numbers please!"
-    abv = gets.chomp
-  puts "What date did you consume this beer? (typed out please!)"
-    date = gets.chomp
-  puts "Out of 10 stars, what would you rank this beer?"
-    ranking = gets.chomp
-  db.execute("INSERT INTO beer_tracker (brewery, beer_name, style, abv, date, ranking)
-   VALUES (?, ?, ?, ?, ?, ?)", [brewery, beer_name, style, abv, date, ranking])
-end
-
-def looper(db)
   loop do 
     puts "Would you like to add more beer? Type done if you are finished"
       user_response = gets.chomp
       if user_response == "yes"
-        beer_adder(db)
+        puts "What brewery created this fine beer?"
+          brewery = gets.chomp
+        puts "What's the beer's name?"
+          beer_name = gets.chomp
+        puts "What style is this beer?"
+          style = gets.chomp
+        puts "What is the abv? Whole numbers please!"
+          abv = gets.chomp
+        puts "What date did you consume this beer? (typed out please!)"
+          date = gets.chomp
+        puts "Out of 10 stars, what would you rank this beer?"
+          ranking = gets.chomp
+        db.execute("INSERT INTO beer_tracker (brewery, beer_name, style, abv, date, ranking)
+        VALUES (?, ?, ?, ?, ?, ?)", [brewery, beer_name, style, abv, date, ranking])
       end
     break if user_response == "done"
   end
@@ -52,16 +44,29 @@ end
 def display_beers(db)
   puts "Here's all the beers you've entered so far:"
   total_beers = db.execute("SELECT * FROM beer_tracker")
-  total_beers.each do |beer|
-    puts "Name: #{beer['brewery']} #{beer['beer_name']}
-    Style: #{beer['style']}
-    ABV: #{beer['abv']}%
-    Date Consumed: #{beer['date']}
-    Ranking: #{beer['ranking']}/10"
+  total_beers.each do |beer|  
+    puts ""
+    puts "Name: #{beer['brewery']} #{beer['beer_name']}"
+    puts "Style: #{beer['style']}"
+    puts "ABV: #{beer['abv']}%"
+    puts "Date Consumed: #{beer['date']}"
+    puts "Ranking: #{beer['ranking']}/10"
   end
 end
 
-looper(db)
-display_beers(db)
+def intro(db)
+  puts "Welcome to the beer tracker!"
+  puts "I'm a program that can track the beer you drink."
+  puts "I'm going to guide you through some questions to start."
+  puts "What would you like done? (Add beer, view the beers you've added)"
+    user_response = gets.chomp
+    if user_response == "View my beers"
+      display_beers(db)
+    elsif user_response == "Add beer"
+      beer_adder(db)
+    end 
+end
+
+intro(db)
 
 
