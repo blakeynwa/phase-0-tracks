@@ -41,6 +41,12 @@ def beer_adder(db)
   end
 end
 
+def intro
+  puts "Welcome to the beer tracker!"
+  puts "I'm a program that can track the beer you drink."
+  puts "I'm going to guide you through some questions to start."
+end
+
 def display_beers(db)
   puts "Here's all the beers you've entered so far:"
   total_beers = db.execute("SELECT * FROM beer_tracker")
@@ -62,11 +68,7 @@ def update_ranking(db)
   db.execute("UPDATE beer_tracker SET ranking=? WHERE beer_name=?", [new_ranking, user_response])
 end
 
-def intro
-  puts "Welcome to the beer tracker!"
-  puts "I'm a program that can track the beer you drink."
-  puts "I'm going to guide you through some questions to start."
-end
+
 
 def questions(db)
   intro
