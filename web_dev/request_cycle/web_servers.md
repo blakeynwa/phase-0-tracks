@@ -9,3 +9,10 @@ Advantages in comparison to a physical server - lower overall cost, and they hel
 
 Why is it considered a bad idea to run programs as the root user on a Linux system?
 Root is a sort of "super-user" that has full access to the system. If you run applications in root, then they in turn also have full access to the system. An example I saw cited explained that if a third party app crashes, you wouldn't want that app crash to bring down your whole system. I think as far as security goes as well, running apps in root would provide them access to your private data, which you may or may not want those apps tracking.
+
+Here are properties I think would be interesting to change:
+-onclick
+-ondragover
+-onemptied
+-draggable
+-onvolumechange
