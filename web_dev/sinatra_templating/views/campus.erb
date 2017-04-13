@@ -4,6 +4,11 @@
   <title>Campus!</title>
 </head>
 <body>
-
+  <h1>Here are the campuses!</h1>
+  <ul>
+  <% @students.each do |campuses| %>
+    <li><%= campuses['name'], campuses['campus'] %></li>
+  <% end %>
+  </ul>
 </body>
 </html>
