@@ -7,8 +7,13 @@
   <h1>Programming Languages</h1>
     <p>What programming languages would you like to learn?</p>
     <form action="/students" method="POST">
-      <input type="text" name="language" placeholder="Language">
+      <input type="text" languages="language" placeholder="Language">
       <button type="submit">Save</button>
     </form>
+    <ul>
+    <% @languages.each do |i| %>
+      <li><%= i['language'] %></li>
+    <% end %>
+  </ul>
 </body>
 </html>

@@ -36,6 +36,7 @@ end
 
 # languages page
 get '/languages/new' do
+  @languages = db2.execute("SELECT * FROM languages")
   erb :languages
 end
 
