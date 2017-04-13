@@ -6,9 +6,9 @@
 <body>
   <h1>Here are the campuses!</h1>
   <ul>
-  <% @students.each do |campuses| %>
-    <li><%= campuses['name'], campuses['campus'] %></li>
-  <% end %>
+    <% @students.each do |student| %>
+      <li><%= student['name'] %>, <%= student['campus'] %></li>
+    <% end %>
   </ul>
 </body>
 </html>
