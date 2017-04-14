@@ -9,6 +9,13 @@
       })
     })
   </script>
+  <script>
+    $(document).ready(function(){
+      $("button").click(function(){
+        $("img").toggle();
+      });
+    });
+  </script>
   <title>JQuery Practice!</title>
 </head>
 <body>
@@ -47,7 +54,8 @@
     <p>!</p>
   </div>
   <div>
-    
+    <button>Click me to see your image appear and disappear...</button>
+    <img src="manning.jpg">
   </div>
 </body>
 </html>
