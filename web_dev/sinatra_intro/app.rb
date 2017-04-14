@@ -47,12 +47,17 @@ end
 
 # write a contact route that displays an address
 
-get'/contact' do
+get '/contact' do
   "707 Broadway<br>
   San Diego, CA<br>
   92101<br>"
 end
 
+# great job route
+
+get '/great_job' do 
+  "Good job, #{params[:name]}!"
+end
 
 
 
