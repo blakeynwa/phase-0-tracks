@@ -73,6 +73,21 @@ get '/:int1/plus/:int2' do
   result.to_s
 end
 
+=begin
+Is Sinatra the only web app library in Ruby?
+Nope! There is ruby on rails, merb, nitro, and camping.
+
+Database options in Sinatra...
+There are more, such as ActiveRecord, or datamapper
+
+Web stack?
+Full software solution required for web development.
+This includes an operating system, programming language,
+database software, and web server.  
+
+  
+end
+
 
 
 
