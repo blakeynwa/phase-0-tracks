@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="jquery-3.2.1.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".magic").click(function(){
+        $(this).hide();
+      })
+    })
+  </script>
+  <script>
+    $(document).ready(function(){
+      $("button").click(function(){
+        $("img").toggle();
+      });
+    });
+  </script>
+  <title>JQuery Practice!</title>
+</head>
+<body>
+  <h1>Click to reveal the hidden message!</h1>
+  <div>
+    <p>H</p>
+    <p class="magic">z</p>
+    <p class="magic">x</p>
+    <p>e</p>
+    <p class="magic">g</p>
+    <p class="magic">b</p>
+    <p>l</p>
+    <p>l</p>
+    <p class="magic">e</p>
+    <p class="magic">q</p>
+    <p>o</p>
+    <p class="magic">u</p>
+    <p class="magic">1</p>
+    <p class="magic">4</p>
+    <p class="magic">3</p>
+    <p>W</p>
+    <p class="magic">e</p>
+    <p class="magic">d</p>
+    <p>o</p>
+    <p class="magic">a</p>
+    <p class="magic">d</p>
+    <p>r</p>
+    <p class="magic">p</p>
+    <p class="magic">o</p>
+    <p>l</p>
+    <p class="magic">e</p>
+    <p class="magic">f</p>
+    <p class="magic">d</p>
+    <p class="magic">c</p>
+    <p class="magic">n</p>
+    <p>!</p>
+  </div>
+  <div>
+    <button>Click me to see your image appear and disappear...</button>
+    <img src="manning.jpg">
+  </div>
+</body>
+</html>
