@@ -56,7 +56,12 @@ end
 # great job route
 
 get '/great_job' do 
-  "Good job, #{params[:name]}!"
+  name = params[:name]
+  if name 
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
 end
 
 #add numbers
