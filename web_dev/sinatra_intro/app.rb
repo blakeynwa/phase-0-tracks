@@ -44,3 +44,51 @@ get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
 end
+
+# write a contact route that displays an address
+
+get '/contact' do
+  "707 Broadway<br>
+  San Diego, CA<br>
+  92101<br>"
+end
+
+# great job route
+
+get '/great_job' do 
+  name = params[:name]
+  if name 
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
+end
+
+#add numbers
+
+get '/:int1/plus/:int2' do
+  num1 = params[:int1]
+  num2 = params[:int2]
+  result = num1.to_i + num2.to_i
+  result.to_s
+end
+
+=begin
+Is Sinatra the only web app library in Ruby?
+Nope! There is ruby on rails, merb, nitro, and camping.
+
+Database options in Sinatra...
+There are more, such as ActiveRecord, or datamapper
+
+Web stack?
+Full software solution required for web development.
+This includes an operating system, programming language,
+database software, and web server.  
+
+  
+end
+
+
+
+
+
